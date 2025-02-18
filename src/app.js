@@ -1,7 +1,7 @@
 import express from 'express';
 const app = express();
 import { configDotenv } from 'dotenv';
-import { pool } from './db';
+import { pool } from './db.js';
 configDotenv();
 app.get('/ping', async (req, res) => { 
     return await pool.query('SELECT "pong" as result', (error, results) => {
