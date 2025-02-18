@@ -1,12 +1,8 @@
 import express from 'express';
 const app = express();
 import { configDotenv } from 'dotenv';
-import pg from 'pg';
+import { pool } from './db';
 configDotenv();
-const pool = new pg.Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: true
-});
 app.get('/ping', async (req, res) => { 
     return await pool.query('SELECT NOW()', (error, results) => {
         if (error) {
