@@ -20,4 +20,5 @@ const Sale = sequelize.define('Sale', {
   timestamps: false
 });
 Sale.hasMany(SaleDetail, { foreignKey: 'sale_id', sourceKey: 'id' });
+SaleDetail.belongsTo(Sale, { foreignKey: 'sale_id', targetKey: 'id' });
 export default Sale;

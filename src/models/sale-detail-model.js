@@ -35,5 +35,4 @@ const SaleDetail = sequelize.define('SaleDetail', {
   tableName: 'sale_detail',
   timestamps: false
 });
-SaleDetail.belongsTo(Sale, { foreignKey: 'sale_id', targetKey: 'id' });
 export default SaleDetail;
