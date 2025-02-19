@@ -1,14 +1,10 @@
 import app from "./src/app.js";
 import { PORT } from "./src/config.js";
 import sequelize from "./src/models/config.js";
-
-// import defineAssociations from "./src/models/associations.js";
-// defineAssociations();
 const startServer = async () => {
   try {
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
-    // await sequelize.sync({force: true}); // Sync all models
     await sequelize.sync();
     app.listen(PORT, () => {
       console.log(`Server is running on ${PORT}`);
