@@ -35,9 +35,4 @@ const SaleDetail = sequelize.define('SaleDetail', {
   tableName: 'sale_detail',
   timestamps: false
 });
-// Definir las asociaciones
-(async () => {
-    const Sale = (await import('./sale-model.js')).default;
-    SaleDetail.belongsTo(Sale, { foreignKey: 'sale_id' });
-  })();
 export default SaleDetail;
