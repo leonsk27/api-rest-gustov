@@ -5,7 +5,7 @@ const startServer = async () => {
   try {
     await sequelize.authenticate();
     console.log('Connection has been established successfully.');
-    await sequelize.sync(); // Sync all models
+    await sequelize.sync({force: true}); // Sync all models
     app.listen(PORT, () => {
       console.log(`Server is running on ${PORT}`);
     });
