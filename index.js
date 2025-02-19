@@ -1,6 +1,6 @@
 import app from "./src/app.js";
 import { PORT } from "./src/config.js";
-
+import sequelize from "./src/models/config.js";
 const startServer = async () => {
   try {
     await sequelize.authenticate();
