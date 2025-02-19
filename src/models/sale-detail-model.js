@@ -17,10 +17,7 @@ const SaleDetail = sequelize.define('SaleDetail', {
   },
   sale_id: {
     type: DataTypes.INTEGER,
-    references: {
-        model: Sale,
-        key: 'id'
-    }
+    allowNull: false,
   },
   quantity: {
     type: DataTypes.INTEGER,
@@ -39,5 +36,8 @@ const SaleDetail = sequelize.define('SaleDetail', {
   timestamps: false
 });
 // Definir las asociaciones
-SaleDetail.belongsTo(Sale, { foreignKey: 'sale_id' });
+(async () => {
+    const Sale = (await import('./sale-model.js')).default;
+    SaleDetail.belongsTo(Sale, { foreignKey: 'sale_id' });
+  })();
 export default SaleDetail;
