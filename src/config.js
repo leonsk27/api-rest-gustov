@@ -8,6 +8,12 @@ console.log(process.env.DB_PASS);
 console.log(process.env.DB_DATABASE);
 console.log(process.env.DB_PORT);
 
+console.log(process.env.MYSQL_DATABASE);
+console.log(process.env.MYSQL_ROOT_PASSWORD);
+console.log(process.env.MYSQLHOST);
+console.log(process.env.MYSQLPORT);
+console.log(process.env.MYSQLUSER);
+
 
 export const PORT = process.env.PORT || 3000;
 export const DB_HOST = process.env.DB_HOST || "mysql.railway.internal";
