@@ -35,7 +35,5 @@ const SaleDetail = sequelize.define('SaleDetail', {
   tableName: 'sale_detail',
   timestamps: false
 });
-SaleDetail.associations = () => {
-  SaleDetail.belongsTo(Sale, { foreignKey: 'sale_ida' });
-}
+SaleDetail.belongsTo(Food, { foreignKey: 'food_id', targetKey: 'id' });
 export default SaleDetail;
