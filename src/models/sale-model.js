@@ -1,0 +1,23 @@
+import { DataTypes } from 'sequelize';
+import sequelize from './config.js';
+
+const Sale = sequelize.define('Sale', {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true
+  },
+  total: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: false
+  },
+  created_at: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
+  }
+}, {
+  tableName: 'sale',
+  timestamps: false
+});
+
+export default Sale;

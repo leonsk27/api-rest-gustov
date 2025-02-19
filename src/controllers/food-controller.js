@@ -17,3 +17,18 @@ export const addFood = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
+export const updateFood = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const [update] = await Food.update(req.body, {where: {id}});
+    if (update) {
+      const updatedFood = await Food.findOne({where: {id}});
+      return res.status(200).json(updatedFood);
+    } else {
+      res.status(404).json({ error: 'Food not found' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+};
