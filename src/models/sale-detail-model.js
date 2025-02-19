@@ -1,7 +1,6 @@
 import { DataTypes } from 'sequelize';
 import sequelize from './config.js';
 import Food from './food-model.js';
-import Sale from './sale-model.js';
 const SaleDetail = sequelize.define('SaleDetail', {
   id: {
     type: DataTypes.INTEGER,

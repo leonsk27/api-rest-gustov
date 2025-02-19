@@ -29,8 +29,7 @@ export const getSalesReport = async (req, res) => {
 
   try {
     const sales = await Sale.findAll({
-      where: sequelize.where(sequelize.fn('DATE', sequelize.col('created_at')), date),
-      include: [{ model: SaleDetail, include: [Food] }]
+      where: sequelize.where(sequelize.fn('DATE', sequelize.col('created_at')), date)
     });
 
     res.status(200).json(sales);
