@@ -2,8 +2,8 @@ import app from "./src/app.js";
 import { PORT } from "./src/config.js";
 import sequelize from "./src/models/config.js";
 
-import defineAssociations from "./src/models/associations.js";
-defineAssociations();
+// import defineAssociations from "./src/models/associations.js";
+// defineAssociations();
 const startServer = async () => {
   try {
     await sequelize.authenticate();
