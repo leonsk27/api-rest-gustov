@@ -13,6 +13,7 @@ console.log(process.env.MYSQL_ROOT_PASSWORD);
 console.log(process.env.MYSQLHOST);
 console.log(process.env.MYSQLPORT);
 console.log(process.env.MYSQLUSER);
+console.log(process.env);
 
 
 export const PORT = process.env.PORT || 3000;
