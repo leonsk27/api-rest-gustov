@@ -19,5 +19,6 @@ const Sale = sequelize.define('Sale', {
   tableName: 'sale',
   timestamps: false
 });
-
+// Definir las asociaciones
+Sale.hasMany(SaleDetail, { foreignKey: 'sale_id' });
 export default Sale;
