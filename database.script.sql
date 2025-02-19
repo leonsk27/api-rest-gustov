@@ -14,6 +14,7 @@ CREATE TABLE sale (
 CREATE TABLE sale_detail (
     id SERIAL PRIMARY KEY,
     food_id INTEGER REFERENCES food(id),
+    sale_id INTEGER REFERENCES sale(id),
     quantity INTEGER NOT NULL,
     total decimal(10, 2) NOT NULL,
     created_at TIMESTAMP DEFAULT NOW()
