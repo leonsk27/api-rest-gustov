@@ -4,6 +4,6 @@ import { createSaleDetail, getSaleDetails  } from '../controllers/sale-detail-co
 const saleDetailRouter = express.Router();
 
 saleDetailRouter.post('/sale-details', createSaleDetail);
-saleDetailRouter.get('/sale-details', getSaleDetails);
+saleDetailRouter.get('/sale-details/:sale_id', getSaleDetails);
 
 export default saleDetailRouter;
