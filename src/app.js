@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import { pool } from './db.js';
 import foodRouter from './routes/food-router.js';
 import saleRouter from './routes/sale-router.js';
