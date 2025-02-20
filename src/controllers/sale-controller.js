@@ -4,8 +4,11 @@ import sequelize from '../models/config.js';
 export const createSale = async (req, res) => {
   try {
     const newSale = await Sale.create(req.body);
+    console.log('New sale created:', req.body);
+    console.log('New sale created:', newSale);
     res.status(201).json(newSale);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
