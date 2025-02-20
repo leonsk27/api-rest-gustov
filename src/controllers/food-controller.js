@@ -49,6 +49,7 @@ export const getMenu = async (req, res) => {
     const foods = await Food.findAll({where: {active: true}});
     res.status(200).json(foods);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
