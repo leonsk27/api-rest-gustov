@@ -4,8 +4,8 @@ import { getFoods, addFood, updateFood, getMenu, getFoodById } from '../controll
 const foodRouter = express.Router();
 
 foodRouter.get('/foods', getFoods);
-foodRouter.get('/foods/:id', getFoodById);
 foodRouter.post('/foods', addFood);
-foodRouter.patch('/foods/:id', updateFood);
 foodRouter.get('/foods/menu', getMenu);
+foodRouter.patch('/foods/:id', updateFood);
+foodRouter.get('/foods/:id', getFoodById);
 export default foodRouter;
