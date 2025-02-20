@@ -14,13 +14,12 @@ export const createSale = async (req, res) => {
 };
 
 export const getSalesReport = async (req, res) => {
-  const { date } = req.query;
+  const { date } = req.params;
 
   try {
     const sales = await Sale.findAll({
       where: sequelize.where(sequelize.fn('DATE', sequelize.col('created_at')), date)
     });
-
     res.status(200).json(sales);
   } catch (error) {
     console.log(error);
