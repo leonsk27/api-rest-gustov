@@ -2,10 +2,8 @@ import Sale from '../models/sale-model.js';
 import sequelize from '../models/config.js';
 
 export const createSale = async (req, res) => {
-  const { total } = req.body;
-  
   try {
-    const newSale = await Sale.create({ total });
+    const newSale = await Sale.create(req.body);
     res.status(201).json(newSale);
   } catch (error) {
     res.status(500).json({ error: 'Internal Server Error' });

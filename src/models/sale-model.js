@@ -11,6 +11,14 @@ const Sale = sequelize.define('Sale', {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false
   },
+  client_name: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  nit_ci: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
   created_at: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW
