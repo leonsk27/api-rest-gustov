@@ -5,6 +5,9 @@ import saleRouter from './routes/sale-router.js';
 import saleDetailRouter from './routes/sale-detail-router.js';
 const app = express();
 app.use(express.json());
+app.use(cors({
+    origin: 'http://localhost:4200' // Permite solicitudes desde tu aplicación Angular (local)
+  }));
 //routes
 app.use('/api', foodRouter);
 app.use('/api', saleRouter);
