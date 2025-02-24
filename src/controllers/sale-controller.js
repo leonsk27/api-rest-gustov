@@ -26,3 +26,18 @@ export const getSalesReport = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+export const getSalesBetweenDates = async (req, res) => {
+  const  { date, dateEnd} = req.params;
+  try {
+    const sales =  await Sale.findAll({
+      where: {
+        created_at: {
+          [sequelize.Op.between]: [new Date(date), new Date(dateEnd)]
+        }
+      }
+    })
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({error: 'Internal server error'});
+  }
+}
