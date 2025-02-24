@@ -4,7 +4,7 @@ import { createSale, getSalesBetweenDates, getSalesReport } from '../controllers
 const saleRouter = express.Router();
 
 saleRouter.post('/sales', createSale);
-saleRouter.get('/sales/report/:date', getSalesReport);
 saleRouter.get('sales/report/:date/:dateEnd', getSalesBetweenDates);
+saleRouter.get('/sales/report/:date', getSalesReport);
 
 export default saleRouter;
