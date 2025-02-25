@@ -1,6 +1,6 @@
 import Sale from '../models/sale-model.js';
 import sequelize from '../models/config.js';
-
+import { Op } from 'sequelize';
 export const createSale = async (req, res) => {
   try {
     const newSale = await Sale.create(req.body);
@@ -31,9 +31,7 @@ export const getSalesBetweenDates = async (req, res) => {
   try {
     const sales =  await Sale.findAll({
       where: {
-        created_at: {
-          [sequelize.Op.between]: [new Date(date), new Date(dateEnd)]
-        }
+        created_at: { [Op.between]: [date, dateEnd] }
       }
     })
   } catch (error) {
