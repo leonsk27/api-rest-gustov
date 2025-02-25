@@ -31,7 +31,7 @@ export const getSalesBetweenDates = async (req, res) => {
   try {
     const sales =  await Sale.findAll({
       where: {
-        created_at: { [Op.between]: [date, dateEnd] }
+        created_at: { [Op.between]: [`${date} 00:00:00`, `${dateEnd} 23:59:59`] }
       }
     });
     res.status(200).json(sales);
