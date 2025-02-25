@@ -33,7 +33,8 @@ export const getSalesBetweenDates = async (req, res) => {
       where: {
         created_at: { [Op.between]: [date, dateEnd] }
       }
-    })
+    });
+    res.status(200).json(sales);
   } catch (error) {
     console.log(error);
     res.status(500).json({error: 'Internal server error'});
